@@ -1,0 +1,13 @@
+marks={} 
+n=int(input("Enter the number of students")) 
+for i in range(n): 
+student_name=input("Enter student's name:") 
+student_mark=input("Enter student's marks:") 
+marks[student_name.title()]=student_mark 
+print("\n Original Dictonary=",marks) 
+smarks=sorted(marks.items()) 
+print("Sorted Dictionary in ascending+",smarks) 
+kmarks=sorted(marks.keys()) 
+print("\n Sorted Dictionary keys in ascending=",kmarks) 
+vmarks=sorted(marks.values()) 
+print("Sorted Dictionary Values in ascending=",vmarks)

@@ -1,0 +1,36 @@
+# Available flights (Flight Number, Destination, Price)
+flights = (
+    ("AI101", "New York", 450),
+    ("BA202", "London", 350),
+    ("CA303", "Paris", 300),
+    ("DA404", "Tokyo", 600),
+    ("EA505", "Sydney", 700),
+)
+
+# Display flights
+for flight in flights:
+    print(flight[0] ,flight[1],flight[2])
+
+# Booking process
+cart = []
+while True:
+    choice = input("\nEnter Flight Number to book (or 'done' to finish): ").upper()
+    if choice == "DONE":
+        break
+    for flight in flights:
+        if choice == flight[0]:
+            cart.append(flight)
+            print("Booked:", flight[1])
+            break
+    else:
+        print("Invalid flight number.")
+
+# Show summary
+if cart:
+    total = sum(f[2] for f in cart)
+    print("\nBooked Flights:", [f[1] for f in cart])
+    print("Total Price:",total)
+else:
+    print("\nNo flights booked.")
+
+print("Thank you!")
